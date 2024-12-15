@@ -1,3 +1,4 @@
+import json
 import sqlalchemy as sq
 import config as cfg
 
@@ -96,7 +97,7 @@ def find_publisher_sales(session):
         return
     else:
         for book, shop, price, date in result:
-            print(f'{book}, {shop}, {price}, {date}')
+            print(f'{book} | {shop} | {price} | {date}')
 
 DSN = f'postgresql://{cfg.DB_USER}:{cfg.DB_PASSWORD}@{cfg.DB_HOST}:{cfg.DB_PORT}/{cfg.DB_NAME}'
 engine = sq.create_engine(DSN)
